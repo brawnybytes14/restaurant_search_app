@@ -11,7 +11,7 @@
               <ion-icon name="search" class="searchicon"></ion-icon>
             </td>
             <td style="width: 98%">
-              <input type="search" placeholder="Type to search restautrants and cuisines..."
+              <input type="search" placeholder="Type to search restaurants and cuisines..."
               (keyup.enter)="onSearch()" [(ngModel)]="searchInput" 
               [matAutocomplete]="auto" [matAutocompleteConnectedTo]="origin" 
               (input)="getSuggestions()" class="searchbox">
