@@ -1,0 +1,138 @@
+<ion-content>
+  <ion-row class="header bg">
+    <ion-col size=2>
+      <h2 style="margin-top: 13px;"><b>&nbsp; Restaurants </b></h2>
+    </ion-col>
+    <ion-col size=8>
+      <div matAutocompleteOrigin class="searchDiv" #origin="matAutocompleteOrigin">
+        <table style="width: 100%;">
+          <tr>
+            <td style="width: 1%;">
+              <ion-icon name="search" class="searchicon"></ion-icon>
+            </td>
+            <td style="width: 98%">
+              <input type="search" placeholder="Type to search restautrants and cuisines..."
+              (keyup.enter)="onSearch()" [(ngModel)]="searchInput" 
+              [matAutocomplete]="auto" [matAutocompleteConnectedTo]="origin" 
+              (input)="getSuggestions()" class="searchbox">
+              </td>
+              <td style="width: 1%;">
+                <ion-icon name="close" *ngIf="this.searchInput" class="crossbtn"
+                (click) = "this.searchInput = ''"></ion-icon>
+              </td>
+          </tr>
+        </table>
+      </div>
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option (click)="onSearch()" *ngFor="let option of this.suggestions" [value]="option">{{option}}
+        </mat-option>
+      </mat-autocomplete>
+    </ion-col>
+    <ion-col size=2>
+      <ion-row>
+        <ion-col size=4 style="padding: 0px;">
+          <ion-button (click)="onSearch()" class="btn" color="primary">
+            <ion-icon name="search-outline"></ion-icon>
+          </ion-button>
+        </ion-col>
+        <ion-col size=4 style="padding: 0px;">
+          <ion-button style="margin-left: 14px;" (click)="OnReset()" class="btn" color="medium">
+            <ion-icon name="refresh-outline"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-col>
+  </ion-row>
+
+  <ion-row *ngIf="this.restaurantProvider.totalItems">
+    <ion-col offset=2 size=2>
+      <i><b>{{this.restaurantProvider.totalItems}}</b> results</i>
+    </ion-col>
+  </ion-row>
+
+  <ion-row *ngIf="!this.restaurantProvider.totalItems">
+    <ion-col offset=2 size=2>
+      <i>No results</i>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col offset=2 size=2>
+      <div class="restcard bg">
+        <b>Filters</b>
+        <br>
+        <ion-checkbox (ionChange)="this.search()" [(ngModel)]="hasOnlineDelivery">
+        </ion-checkbox>
+        <ion-label>
+          Has Online Delivery
+        </ion-label>
+        <br>
+        <ion-checkbox (ionChange)="this.search()" [(ngModel)]="hasTableBooking">
+        </ion-checkbox>
+        <ion-label>
+          Has Table Booking
+        </ion-label>
+        <br>
+        <br>
+        <b>Sort By</b>
+        <br>
+        <div style="cursor: pointer;" [ngClass]="{active: this.sortType == 'ratingHighToLow'}"
+          (click)="sortBy('ratingHighToLow')">
+          Rating - high to low
+        </div>
+        <div style="cursor: pointer;" [ngClass]="{active: this.sortType == 'ratingLowToHigh'}"
+          (click)="sortBy('ratingLowToHigh')">
+          Rating - low to high
+        </div>
+        <div style="cursor: pointer;" [ngClass]="{active: this.sortType == 'votesHighToLow'}"
+          (click)="sortBy('votesHighToLow')">
+          Votes - high to low
+        </div>
+        <div style="cursor: pointer;" [ngClass]="{active: this.sortType == 'votesLowToHigh'}"
+          (click)="sortBy('votesLowToHigh')">
+          Votes - low to high
+        </div>
+        <div style="cursor: pointer;" [ngClass]="{active: this.sortType == 'costHighToLow'}"
+          (click)="sortBy('costHighToLow')">
+          Cost - high to low
+        </div>
+        <div style="cursor: pointer;" [ngClass]="{active: this.sortType == 'costLowToHigh'}"
+          (click)="sortBy('costLowToHigh')">
+          Cost - low to high
+        </div>
+        <br>
+        <b>Cuisine</b>
+        <br>
+        <div style="cursor: pointer;" [ngClass]="{active: this.cuisine == item}" (click)="onCuisine(item)"
+          *ngFor="let item of restaurantProvider.cuisines">
+          {{item}}
+        </div>
+      </div>
+    </ion-col>
+    <ion-col size=6>
+      <div class="restcard bg" *ngFor="let item of restaurantProvider.searchResults">
+        <ion-row>
+          <ion-col>
+            <img src="../../assets/rest.jpg">
+          </ion-col>
+          <ion-col size=7>
+            <h2>{{item.name}}</h2>
+          </ion-col>
+          <ion-col size=3>
+            <div style="float: right;">
+              <p class="ratingbox" [style.background-color]="item.ratingColor">
+                {{item.avgRating}}
+              </p>
+              <p>
+                {{item.votes}} votes
+              </p>
+            </div>
+          </ion-col>
+        </ion-row>
+        <p><b>Average Cost For Two:</b> {{item.avgCostForTwo}} - {{item.currency}}</p>
+        <p><b>Cuisines:</b> {{item.cuisines}}</p>
+        <p><b>Rating:</b> {{item.ratingText}}</p>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-content>
