@@ -11,11 +11,11 @@ router.post("/search", (req, res) => {
         }
 
         if (req.body.hasTableBooking) {
-            selectQuery += ` and r.hasTableBooking = "yes" `;
+            selectQuery += ` and r.hasTableBooking = "Yes" `;
         }
 
         if (req.body.hasOnlineDelivery) {
-            selectQuery += ` and r.hasOnlineDelivery = "yes" `;
+            selectQuery += ` and r.hasOnlineDelivery = "Yes" `;
         }
 
         if (req.body.cuisine) {
