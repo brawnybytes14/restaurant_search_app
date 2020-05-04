@@ -1,5 +1,5 @@
 ### Restaurants
-A web application based on NodeJS to search for restaurants and cuisines.
+A web application based on Node.js and Angular to search for restaurants and cuisines.
 
 ### Screenshots
 ![Questions](https://raw.githubusercontent.com/rohitkori/restaurant_search_app/master/server/screenshots/restaurant2.png)
