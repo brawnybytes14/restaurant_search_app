@@ -14,7 +14,7 @@ A web application based on Node.js and Angular to search for restaurants and cui
 *For **SQLite** version, which is present in **server_inmemory** directory, you don't require **MySQL**. Just follow the instructions below.*
 
 ### Instructions
-1. Clone the project.
+1. Clone or download the project.
 2. Open the **server_inmemory** in the terminal.
 3. Run the following commands
    > **npm install**    
