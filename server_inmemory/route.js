@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const sqlite3 = require('sqlite3').verbose();
+const database = require('./database');
 
 router.post("/search", (req, res) => {
     try {
-        let db = new sqlite3.Database('./restaurant');
+        let db = database.getConnection();
         var selectQuery = `SELECT * from restaurants r where 1=1 `;
 
         if (req.body.searchValue) {
@@ -73,7 +73,7 @@ router.post("/search", (req, res) => {
 
 router.get("/getCuisines", (req, res) => {
     try {
-        let db = new sqlite3.Database('./restaurant');
+        let db = database.getConnection();
         var selectQuery = `SELECT distinct cuisines as cuisine from restaurants`;
 
         db.all(selectQuery, [], (err, rows) => {
@@ -115,7 +115,7 @@ router.get("/getCuisines", (req, res) => {
 
 router.get("/getRestaurants", (req, res) => {
     try {
-        let db = new sqlite3.Database('./restaurant');
+        let db = database.getConnection();
         var selectQuery = `SELECT distinct name from restaurants`;
         db.all(selectQuery, [], (err, rows) => {
             if (err) {
