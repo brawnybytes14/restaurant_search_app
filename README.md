@@ -15,7 +15,7 @@ A web application based on Node.js and Angular to search for restaurants and cui
 
 ### Instructions
 1. Clone or download the project.
-2. Open the **server_inmemory** in the terminal.
+2. Open the **server_inmemory** directory in the terminal.
 3. Run the following commands
    > **npm install**    
    > **npm start** 
