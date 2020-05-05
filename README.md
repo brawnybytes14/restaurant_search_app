@@ -1,8 +1,6 @@
 ### Restaurants
 A web application based on Node.js and Angular to search for restaurants and cuisines.
 
-___
-
 ### Tools and Technologies
 1. Node: **13.6.0**
 2. Angular: **8.3.22**
@@ -11,21 +9,16 @@ ___
 5. SQLite: **3.31.1**
 6. Ubuntu: **18.04.3 LTS**
 
-***
-
 *For **SQLite** version, which is present in **server_inmemory** directory, you don't require **MySQL**. Just follow the instructions below.*
 
 ### Instructions
 1. Clone the project.
 2. Open the **server_inmemory** in the terminal.
-3. Run **npm install**
-4. Run **npm start**
-
-***
+3. Run the following commands
+> **npm install**
+> **npm start**
 
 *The **MySQL** version is present in **server** directory and the instructions for the same are present in **server > instructions** directory.*
-
-***
 
 ### Screenshots
 ![Questions](https://raw.githubusercontent.com/rohitkori/restaurant_search_app/master/server/screenshots/restaurant2.png)
