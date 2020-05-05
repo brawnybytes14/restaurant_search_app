@@ -1,5 +1,6 @@
 ### Restaurants
 A web application based on Node.js and Angular to search for restaurants and cuisines.
+#
 
 ### Tools and Technologies
 1. Node: **13.6.0**
