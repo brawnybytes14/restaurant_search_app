@@ -15,8 +15,9 @@ A web application based on Node.js and Angular to search for restaurants and cui
 1. Clone the project.
 2. Open the **server_inmemory** in the terminal.
 3. Run the following commands
-> **npm install**
-> **npm start**
+   > **npm install**
+   >
+   > **npm start** 
 
 *The **MySQL** version is present in **server** directory and the instructions for the same are present in **server > instructions** directory.*
 
