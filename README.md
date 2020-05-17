@@ -11,7 +11,8 @@ A web application based on Node.js and Angular to search for restaurants and cui
 6. Ubuntu: **18.04.3 LTS**
 #    
     
-*For **SQLite** version, which is present in **server_inmemory** directory, you don't require **MySQL**. Just follow the instructions below.*
+*The **MySQL** version is present in **server** directory and the instructions for the same are present in **server > README.md** file. For **SQLite** version, which is present in **server_inmemory** directory, you don't require **MySQL**. Just follow the instructions below.*
+#
 
 ### Instructions
 1. Clone or download the project.
@@ -21,10 +22,7 @@ A web application based on Node.js and Angular to search for restaurants and cui
 npm install
 npm start
 ```
-#    
-    
-*The **MySQL** version is present in **server** directory and the instructions for the same are present in **server > README.md** file.*
-#    
+#      
     
 ### Screenshots
 ![Questions](https://raw.githubusercontent.com/rohitkori/restaurant_search_app/master/server/screenshots/restaurant2.png)
