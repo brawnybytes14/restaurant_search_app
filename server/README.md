@@ -24,9 +24,9 @@ GRANT ALL PRIVILEGES ON *.* TO '<username>'@'%';
 ```
 CREATE DATABASE <database_name>;
 ```
-3. Import the sql file from **project_directory > db_scripts > restaurant.sql** into the database that you created in the 2nd step.
+3. Import the sql file from **server > db_scripts > restaurant.sql** into the database that you created in the 2nd step.
 
-4. Open the **project_directory > database.js** file and change the username, password and database_name that you created in the 1st and 2nd step.
+4. Open the **server > database.js** file and change the username, password and database_name that you created in the 1st and 2nd step.
 ```
 var mysql = require('mysql');
 var connection = mysql.createPool({
@@ -45,14 +45,14 @@ var connection = mysql.createPool({
 });
 module.exports.connection = connection;
 ```
-5. Save the file and open the project in the terminal
+5. Save the file and open the **server** directory in the terminal
 6. Run the following commands
 ```
 npm install
 npm start
 ```
 7. Now you’ll see something like **Server started: http://localhost:9500**
-8. Change the port if required in the **project_directory > config.json** file.
+8. Change the port if required in the **server > config.json** file.
 
 ```
 {
