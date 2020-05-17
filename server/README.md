@@ -30,18 +30,18 @@ CREATE DATABASE <database_name>;
 ```
 var mysql = require('mysql');
 var connection = mysql.createPool({
-connectionLimit: 100,
+  connectionLimit: 100,
 
-host:'localhost',
-user:'<username>',
-password:'<password>',
-database:'<database_name>',
+  host:'localhost',
+  user:'<username>',
+  password:'<password>',
+  database:'<database_name>',
 
-port: 3306,
-debug: false,
-multipleStatements: true,
-queueLimit: 10000,
-acquireTimeout: 10000
+  port: 3306,
+  debug: false,
+  multipleStatements: true,
+  queueLimit: 10000,
+  acquireTimeout: 10000
 });
 module.exports.connection = connection;
 ```
@@ -56,8 +56,8 @@ npm start
 
 ```
 {
-"HOST":"http://localhost",
-"PORT": 9500
+  "HOST":"http://localhost",
+  "PORT": 9500
 }
 ```    
 9. Open the url mentioned in the console.
