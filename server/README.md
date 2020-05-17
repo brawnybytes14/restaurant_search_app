@@ -1,5 +1,6 @@
-### Instructions
-#
+### Restaurants
+A web application based on Node.js and Angular to search for restaurants and cuisines.
+#    
 
 ### Tools and Technologies
 1. Node: **13.6.0**
@@ -11,6 +12,7 @@
 # 
 
 Please make sure you have the above mentioned softwares with the specified versions, though not strictly required.
+#
 
 ### How to run?
 1. Create a user in the mysql database using the following commands:
