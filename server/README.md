@@ -46,10 +46,13 @@ acquireTimeout: 10000
 module.exports.connection = connection;
 ```
 5. Save the file and open the project in the terminal
-6. Run npm install
-7. Then, run npm start
-8. Now you’ll see something like Server started: http://localhost:9500
-9. Change the port if required in the **project_directory > config.json** file.
+6. Run the following commands
+```
+npm install
+npm start
+```
+7. Now you’ll see something like **Server started: http://localhost:9500**
+8. Change the port if required in the **project_directory > config.json** file.
 
 ```
 {
@@ -57,4 +60,4 @@ module.exports.connection = connection;
 "PORT": 9500
 }
 ```    
-10. Open the url mentioned in the console.
+9. Open the url mentioned in the console.
