@@ -23,7 +23,7 @@ npm start
 ```
 #    
     
-*The **MySQL** version is present in **server** directory and the instructions for the same are present in **server > instructions** directory.*
+*The **MySQL** version is present in **server** directory and the instructions for the same are present in **server > README.md** directory.*
 #    
     
 ### Screenshots
